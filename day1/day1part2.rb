@@ -1,12 +1,8 @@
 #!/usr/bin/env ruby
 
-s = ""
-i = ""
-while (i = gets)
-  s += i
-end
+# day 1 part 2
 
-a = s.split.map(&:to_i)
+a = File.read('input').split.map(&:to_i)
 
 r = 0
 h = Hash.new(0)
@@ -16,7 +12,6 @@ a.cycle do |i|
   h[r] += 1
   if h[r] > 1
     puts r
-    found = true
     break
   end
 end

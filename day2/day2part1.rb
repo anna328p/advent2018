@@ -2,15 +2,7 @@
 
 # Day 2 Part 1
 
-#s = ""
-#i = ""
-#while (i = gets)
-#  s += i
-#end
-
-s = File.read 'input'
-
-a = s.split
+a = File.read('input').split
 
 def find_n(a, n)
 	a.map { |i|
