@@ -17,8 +17,8 @@ s.map { |str|
   /#(?<id>\d+) @ (?<x>\d+),(?<y>\d+): (?<width>\d+)x(?<height>\d+)/ =~ str
   { id: id.to_i, x: x.to_i, y: y.to_i, w: width.to_i, h: height.to_i }
 }.each_with_index { |str, idx|
-  a[str[:y]..str[:y] + str[:h]].each do |row|
-    range = ((str[:x])..(str[:x] + str[:w]))
+  a[str[:y]...str[:y] + str[:h]].each do |row|
+    range = ((str[:x])...(str[:x] + str[:w]))
     row[range] = row[range].inc
   end
 }
